@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+
+      <div class="container-sm">
+        <div class="d-flex justify-content-center align-items-center vh-100">
+
+            <form method="POST" action={{ url_for('process') }}>
+                <div class="row align-items-center gy-3">
+                    <label class="form-label">ID</label>
+                    <input type="number" class="form-control" name="primary_key" placeholder="ID" value={{ data[0].tatoo_id }} readonly>
+
+                    <label class="form-label">Name</label>
+                    <input id="examplename" type="text" class="form-control" name="tatoo_name" value={{ data[0].name }} placeholder="Name">
+                    
+                    <label class="form-label">Price</label>
+                    <input type="number" class="form-control" name="price" value={{ data[0].price }} placeholder="Price">
+                    
+                    <label class="form-label">Creation date (YYYY-MM-DD)</label>
+                    <input type="text" class="form-control" name="date_added" value={{ data[0].date_added }} placeholder="Date added">
+
+                    <!-- Buttons -->
+                    <input type="submit" class="btn btn-primary" name="action" value="Save changes">
+                    <input type="submit" class="btn btn-danger" name="action" value="Back">
+                </div>    
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

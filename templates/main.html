@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href={{ url_for('index') }}>Home</a>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+
+        
+    <div class="container-sm my-5">
+      <form method="POST" action={{ url_for('process') }}>
+          <div class="row gy-2 align-self-center">
+              <input type="text" class="form-control" name="tatoo_name" placeholder="Name" required>
+              <input type="number" class="form-control" name="price" placeholder="Price" required>
+              <input type="submit" class="btn btn-primary" name="action" value="Add">
+          </div>    
+      </form>
+    </div>
+
+
+      {% block content %}
+
+      {% endblock %}
+</body>
+</html>
